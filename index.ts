@@ -39,7 +39,7 @@ const messageToReply = "Клиент этого пользователя не п
             if(message.media && SPAMER_ID.includes(sender || "")){
                 const isVideoAudioMessage = (message.media.toJSON() as any)?.className === "MessageMediaDocument"
                 if(isVideoAudioMessage){
-                    if(message.text === messageToReply){
+                    if(messageToReply){
                         message.reply({ message: messageToReply });
                     }
                     message.delete({ revoke: true });
